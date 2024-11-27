@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  sourcemap: { client: true },  
   css: ["~/assets/css/main.css"],
   experimental: {
     asyncContext: true,
@@ -30,6 +31,20 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ["@nuxtjs/html-validator", "nuxt-auth-utils", "@formkit/auto-animate/nuxt", "@nuxt/ui", "@vueuse/nuxt"],
+  modules: [
+    "@nuxtjs/html-validator",
+    "nuxt-auth-utils",
+    "@formkit/auto-animate/nuxt",
+    "@nuxt/ui",
+    "@vueuse/nuxt",
+    "@sentry/nuxt/module"
+  ],
+  sentry: {
+    sourceMapsUploadOptions: {
+      org: "steven-eubank",
+      project: "pantherworld",
+      authToken: "",
+    },
+  },
   compatibilityDate: "2024-07-04",
 });

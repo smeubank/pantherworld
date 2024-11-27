@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ErrorButton from '~/components/ErrorButton.vue'
+
 const config = useRuntimeConfig();
 
 useSeoMeta({
@@ -42,11 +44,14 @@ const locationBgClass: locationKeyValue = {
       <span>🗺️</span>
     </div>
     <h1 class="text-4xl mb-6 text-center font-bold max-w-md">The game doesn't stop when the stream ends</h1>
-    <a
-      href="https://twitch.tv/whitep4nth3r/chat"
-      class="bg-violet-700 hover:bg-violet-500 focus:bg-emerald-700 active:bg-emerald-700 focus:outline-none focus:ring focus:ring-emerald-300 text-slate-50 py-2 px-4 rounded-lg text-xl transition font-display"
-      >play now</a
-    >
+    <div class="flex gap-4">
+      <a
+        href="https://twitch.tv/whitep4nth3r/chat"
+        class="bg-violet-700 hover:bg-violet-500 focus:bg-emerald-700 active:bg-emerald-700 focus:outline-none focus:ring focus:ring-emerald-300 text-slate-50 py-2 px-4 rounded-lg text-xl transition font-display"
+        >play now</a
+      >
+      <ErrorButton />
+    </div>
   </section>
 
   <section v-auto-animate>
